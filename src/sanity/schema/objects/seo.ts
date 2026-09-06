@@ -1,0 +1,36 @@
+import { defineField, defineType } from 'sanity';
+
+export const seo = defineType({
+  name: 'seo',
+  title: 'SEO',
+  type: 'object',
+  options: { collapsible: true, collapsed: true },
+  fields: [
+    defineField({
+      name: 'metaTitle',
+      title: 'Meta title',
+      type: 'string',
+      description: 'Overrides the page title in search results and browser tabs.',
+      validation: (rule) => rule.max(70),
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'Meta description',
+      type: 'text',
+      rows: 3,
+      validation: (rule) => rule.max(160),
+    }),
+    defineField({
+      name: 'ogImage',
+      title: 'Social share image',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: 'noIndex',
+      title: 'Hide from search engines',
+      type: 'boolean',
+      initialValue: false,
+    }),
+  ],
+});

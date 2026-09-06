@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --bg: #0a0a0a;
+  --bg-raised: #121214;
+  --bg-inset: #0f0f11;
+  --border: #232327;
+  --border-strong: #35353b;
+
+  --text: #ededf0;
+  --text-muted: #a1a1ab;
+  --text-faint: #6d6d78;
+
+  --accent: #863bff;
+  --accent-soft: rgba(134, 59, 255, 0.14);
+  --accent-border: rgba(134, 59, 255, 0.4);
+  --link: #00bfff;
+  --success: #3ddc97;
+
+  --radius: 10px;
+  --measure: 68ch;
+  --page-max: 60rem;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --section-gap: clamp(3.5rem, 9vw, 6rem);
+
+  font-family: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.65;
+  color-scheme: dark;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+ul,
+ol,
+dl {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
